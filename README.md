@@ -98,16 +98,6 @@ http://localhost:3000
 
 ---
 
-## 🔐 Environment Variables
-
-Create a `.env.local` file:
-
-```env
-MONGODB_URI=your_mongodb_uri
-JWT_SECRET=your_secret_key
-```
-
----
 
 ## 📊 Admin Dashboard
 
