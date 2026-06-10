@@ -1,36 +1,137 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ☕ Set Coffee Next
 
-## Getting Started
+A full-stack coffee shop e-commerce platform built with Next.js, MongoDB, and modern web technologies.
 
-First, run the development server:
+## ✨ Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### Customer Features
+- Browse coffee products
+- Product details page
+- Wishlist management
+- User authentication
+- User dashboard
+- Ticket support system
+- User comments and reviews
+- Account management
+
+### Admin Features
+- Product management
+- User management
+- Comment moderation
+- Discount code management
+- Ticket management
+- Dashboard analytics
+
+### Technical Features
+- JWT Authentication
+- MongoDB Database
+- Responsive Design
+- Interactive Maps
+- Charts and Analytics
+- Modern UI Components
+- Image Upload Support
+
+---
+
+## 🛠 Tech Stack
+
+### Frontend
+- Next.js 16
+- React 19
+- Tailwind CSS
+- Swiper
+- AOS
+- React Icons
+- React Select
+
+### Backend
+- Next.js API Routes
+- MongoDB
+- Mongoose
+- JWT
+- bcryptjs
+
+### Additional Libraries
+- Leaflet
+- React Leaflet
+- Recharts
+- SweetAlert
+
+---
+
+## 📂 Project Structure
+
+```text
+src/
+├── app/
+│   ├── api/
+│   ├── p-admin/
+│   ├── p-user/
+│   ├── product/
+│   ├── wishlist/
+│   └── about/
+│
+├── components/
+│   ├── layouts/
+│   ├── modules/
+│   └── templates/
+│
+├── models/
+├── configs/
+└── utils/
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 🚀 Installation
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+git clone https://github.com/Elashf/Set-Coffee-Next.git
+cd Set-Coffee-Next
+npm install
+npm run dev
+```
 
-## Learn More
+Open:
 
-To learn more about Next.js, take a look at the following resources:
+```text
+http://localhost:3000
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🔐 Environment Variables
 
-## Deploy on Vercel
+Create a `.env.local` file:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```env
+MONGODB_URI=your_mongodb_uri
+JWT_SECRET=your_secret_key
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 📊 Admin Dashboard
+
+The admin panel includes:
+
+- Products Management
+- Users Management
+- Discounts Management
+- Tickets Management
+- Comments Moderation
+
+---
+
+## 👤 Author
+
+Ela Farahani
+
+GitHub:
+https://github.com/Elashf
+
+---
+
+## 📄 License
+
+This project is created for educational and portfolio purposes.
