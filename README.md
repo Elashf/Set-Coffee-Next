@@ -25,7 +25,6 @@ A full-stack coffee shop e-commerce platform built with Next.js, MongoDB, and mo
 ### Technical Features
 - JWT Authentication
 - MongoDB Database
-- Responsive Design
 - Interactive Maps
 - Charts and Analytics
 - Modern UI Components
@@ -38,7 +37,6 @@ A full-stack coffee shop e-commerce platform built with Next.js, MongoDB, and mo
 ### Frontend
 - Next.js 16
 - React 19
-- Tailwind CSS
 - Swiper
 - AOS
 - React Icons
