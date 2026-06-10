@@ -1,92 +1,64 @@
-# ☕ Set Coffee Next
+# Set Coffee Next ☕
 
-A full-stack coffee shop e-commerce platform built with Next.js, MongoDB, and modern web technologies.
+A coffee shop web application built with Next.js and MongoDB.
 
-## ✨ Features
+## Features
 
-### Customer Features
-- Browse coffee products
-- Product details page
-- Wishlist management
-- User authentication
-- User dashboard
-- Ticket support system
-- User comments and reviews
-- Account management
+* User authentication (Login & Register)
+* User dashboard
+* Admin dashboard
+* Product management
+* Product comments
+* Wishlist
+* Shopping cart
+* Discount codes
+* Support ticket system
+* Interactive map
 
-### Admin Features
-- Product management
-- User management
-- Comment moderation
-- Discount code management
-- Ticket management
-- Dashboard analytics
-
-### Technical Features
-- JWT Authentication
-- MongoDB Database
-- Interactive Maps
-- Charts and Analytics
-- Modern UI Components
-- Image Upload Support
-
----
-
-## 🛠 Tech Stack
+## Tech Stack
 
 ### Frontend
-- Next.js 16
-- React 19
-- Swiper
-- AOS
-- React Icons
-- React Select
+
+* Next.js
+* React
+* Swiper
+* AOS
+* React Icons
+* React Select
 
 ### Backend
-- Next.js API Routes
-- MongoDB
-- Mongoose
-- JWT
-- bcryptjs
 
-### Additional Libraries
-- Leaflet
-- React Leaflet
-- Recharts
-- SweetAlert
+* Next.js API Routes
+* MongoDB
+* Mongoose
+* JWT Authentication
+* bcryptjs
 
----
+### Other Libraries
 
-## 📂 Project Structure
+* Recharts
+* Leaflet
+* React Leaflet
+* SweetAlert
 
-```text
-src/
-├── app/
-│   ├── api/
-│   ├── p-admin/
-│   ├── p-user/
-│   ├── product/
-│   ├── wishlist/
-│   └── about/
-│
-├── components/
-│   ├── layouts/
-│   ├── modules/
-│   └── templates/
-│
-├── models/
-├── configs/
-└── utils/
-```
+## Getting Started
 
----
-
-## 🚀 Installation
+Clone the repository:
 
 ```bash
 git clone https://github.com/Elashf/Set-Coffee-Next.git
 cd Set-Coffee-Next
+```
+
+Install dependencies:
+
+```bash
 npm install
+```
+
+Run development server:
+
+```bash
 npm run dev
 ```
 
@@ -96,30 +68,21 @@ Open:
 http://localhost:3000
 ```
 
----
+##
 
+## Learning Goals
 
-## 📊 Admin Dashboard
+This project was created to practice:
 
-The admin panel includes:
+* Next.js App Router
+* MongoDB & Mongoose
+* Authentication with JWT
+* Building admin and user dashboards
+* API Routes in Next.js
+* Working with reusable components
 
-- Products Management
-- Users Management
-- Discounts Management
-- Tickets Management
-- Comments Moderation
-
----
-
-## 👤 Author
+## Author
 
 Ela Farahani
 
-GitHub:
-https://github.com/Elashf
-
----
-
-## 📄 License
-
-This project is created for educational and portfolio purposes.
+GitHub: https://github.com/Elashf
