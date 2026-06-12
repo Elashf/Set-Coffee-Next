@@ -36,7 +36,7 @@ const filename = Date.now() + img.name;
       suitableFor,
       smell,
       tags,
-      img: `http://localhost:3000/uploads/${filename}`,
+      img: `/uploads/${filename}`,
     });
 
     const buffer = Buffer.from(await img.arrayBuffer());
