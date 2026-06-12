@@ -3,7 +3,7 @@ import styles from "./comments.module.css";
 import CommentForm from "./CommentForm";
 
 
-const Comments = ({productID , comments}) => {
+/*const Comments = ({productID , comments}) => {
   return (
     <div>
       <p>نظرات ({comments.filter((comment)=> comment.isAccept).length || 0}) :</p>
@@ -25,6 +25,36 @@ const Comments = ({productID , comments}) => {
         </div>
         <div className={styles.form_bg}>
           <CommentForm productID={productID}/>
+        </div>
+      </main>
+    </div>
+  );
+};*/
+
+const Comments = ({ productID, comments }) => {
+  const safeComments = Array.isArray(comments) ? comments : [];
+  const acceptedComments = safeComments.filter(c => c.isAccept);
+
+  return (
+    <div>
+      <p>نظرات ({acceptedComments.length}) :</p>
+      <hr />
+
+      <main className={styles.comments}>
+        <div className={styles.user_comments}>
+          <p className={styles.title}>
+            {acceptedComments.length} دیدگاه برای محصول
+          </p>
+
+          <div>
+            {acceptedComments.map((comment) => (
+              <Comment key={comment._id} {...comment} />
+            ))}
+          </div>
+        </div>
+
+        <div className={styles.form_bg}>
+          <CommentForm productID={productID} />
         </div>
       </main>
     </div>
