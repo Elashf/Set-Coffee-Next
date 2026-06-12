@@ -20,8 +20,9 @@ await connectToDB()
 const user = await authUser()
 
 if(user){
-   wishes = await wishlistModel.find({user :user._id}).populate("product", 'name price score').lean()
+   wishes = await wishlistModel.find({user :user._id}).populate("product", 'name price score img').lean()
 }
+console.log(wishes);
 
 
 return (
@@ -32,7 +33,7 @@ return (
         <p className={styles.title}>محصولات مورد علاقه شما</p>
         <section>
           {wishes?.length > 0 &&
-            wishes.map((wish) => <Product key={wish._id} {...wish.product} />)}
+            wishes.map((wish) =>wish.product && <Product key={wish._id} {...wish.product} />)}
         </section>
       </main>
 
