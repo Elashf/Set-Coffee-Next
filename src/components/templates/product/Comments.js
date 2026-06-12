@@ -49,7 +49,7 @@ console.log(comments);
 
           <div>
             {acceptedComments.map((comment) => (
-              <Comment key={comment._id} comment={JSON.parse(JSON.stringify(comment))} />
+              <Comment key={comment._id} {...comment} />
             ))}
           </div>
         </div>
