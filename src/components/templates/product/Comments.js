@@ -32,19 +32,22 @@ import CommentForm from "./CommentForm";
 };*/
 
 const Comments = ({ productID, comments }) => {
-  const safeComments = Array.isArray(comments) ? comments : [];
-  const acceptedComments = safeComments.filter(c => c.isAccept);
-console.log(comments);
+  const safeComments = comments ?? [];
+
+  const acceptedComments = safeComments
+    .filter(Boolean)
+    .filter(c => c?.isAccept);
 
   return (
     <div>
       <p>نظرات ({acceptedComments.length}) :</p>
+
       <hr />
 
       <main className={styles.comments}>
         <div className={styles.user_comments}>
           <p className={styles.title}>
-            {acceptedComments.length} دیدگاه برای محصول
+            {acceptedComments.length} دیدگاه
           </p>
 
           <div>
