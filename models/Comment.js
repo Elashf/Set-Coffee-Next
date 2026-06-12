@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-require('./Product')
+
 const schema =new mongoose.Schema({
     username :{
         type:String ,
@@ -28,7 +28,7 @@ const schema =new mongoose.Schema({
         immutable :false
 },
     productID :{
-        type:mongoose.Types.ObjectId ,
+        type:mongoose.Schema.Types.ObjectId ,
         ref :"Product"
 },
     user :{

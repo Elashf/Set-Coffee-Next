@@ -37,7 +37,7 @@ function AddProduct() {
 
     console.log("Res ->", res);
 
-    if (res.status === 201) {
+    if (res.status.ok) {
       swal({
         title: "محصول مورد نظر با موفقیت ایجاد شد",
         icon: "success",

@@ -16,12 +16,12 @@ const page = async () => {
     .lean();
 
 const validComments = comments.filter(
-  comment => comment.productID)
+  comment => comment.productID && comment.productID.name)
 
  return (
     <Layout>
       <main>
-        {comments.length === 0 ? (
+        {validComments.length === 0 ? (
           <p className={styles.empty}>کامنتی وجود ندارد</p>
         ) : (
           <Table

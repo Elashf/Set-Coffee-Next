@@ -70,7 +70,7 @@ export async function PUT(request) {
 
     const buffer = Buffer.from(await img.arrayBuffer());
     const filename = Date.now() + img.name;
-    const pathfile = path.join(process.cwd(), "/public/uploads" + filename);
+    const pathfile = path.join(process.cwd(), "/public/uploads/" + filename);
     await writeFile(pathfile, buffer);
 
     return NextResponse.json(

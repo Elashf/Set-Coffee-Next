@@ -1,23 +1,22 @@
 import Comment from "@/components/modules/comment/Comment";
 import styles from "./comments.module.css";
 import CommentForm from "./CommentForm";
-import { createParamsFromClient } from "next/dist/server/request/params";
+
 
 const Comments = ({productID , comments}) => {
   return (
     <div>
-      <p>نظرات ({comments.filter((comment)=> comment.isAccept).length}) :</p>
+      <p>نظرات ({comments.filter((comment)=> comment.isAccept).length || 0}) :</p>
       <hr />
 
       <main className={styles.comments}>
         <div className={styles.user_comments}>
           <p className={styles.title}>
-            {comments.filter((comment)=>comment.isAccept).length} دیدگاه برای کپسول قهوه SETPRESSO سازگار با دستگاه نسپرسو ( GOLD )
+            {comments.filter((comment)=>comment.isAccept).length } دیدگاه برای کپسول قهوه SETPRESSO سازگار با دستگاه نسپرسو ( GOLD )
             ده -10- عددی
           </p>
           <div>
-            {comments?.map((comment)=> (
-              comment.isAccept &&
+            {comments?.filter((comment) => comment.isAccept).map((comment)=> (
             <Comment key={comment?._id} {...comment}/>)
             )}
             
