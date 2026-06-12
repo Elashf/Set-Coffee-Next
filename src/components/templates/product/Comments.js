@@ -34,6 +34,7 @@ import CommentForm from "./CommentForm";
 const Comments = ({ productID, comments }) => {
   const safeComments = Array.isArray(comments) ? comments : [];
   const acceptedComments = safeComments.filter(c => c.isAccept);
+console.log(comments);
 
   return (
     <div>
@@ -48,7 +49,7 @@ const Comments = ({ productID, comments }) => {
 
           <div>
             {acceptedComments.map((comment) => (
-              <Comment key={comment._id} {...comment} />
+              <Comment key={comment._id} comment={JSON.parse(JSON.stringify(comment))} />
             ))}
           </div>
         </div>
