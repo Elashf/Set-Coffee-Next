@@ -2,6 +2,8 @@
 
 A coffee shop web application built with Next.js and MongoDB.
 
+https://set-coffee-next.onrender.com
+
 ## Features
 
 * User authentication (Login & Register)
