@@ -1,4 +1,4 @@
-# Set Coffee Next ☕
+# Set Coffee By Next.js ☕
 
 A coffee shop web application built with Next.js and MongoDB.
 
