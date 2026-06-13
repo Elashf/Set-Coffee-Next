@@ -6,12 +6,14 @@ import styles from "./navbar.module.css";
 import { IoIosArrowDown } from "react-icons/io";
 import { FaShoppingCart, FaRegHeart } from "react-icons/fa";
 
-function Navbar({isLogin}) {
+function Navbar() {
 
   const [fixTop , setFixTop] = useState(false)
   const [wishCount , setWishCount] = useState(0)
   const [cartCount , setCartCount]= useState(0)
+  const [isLogin, setIsLogin] = useState(false)
 
+  
   useEffect(()=>{
     const cart =JSON.parse(localStorage.getItem("cart") || "[]") 
     setCartCount(cart.length)
@@ -19,11 +21,14 @@ function Navbar({isLogin}) {
 
   useEffect(()=>{
 const getWishCount = async()=>{
+ try {
   const res = await fetch("/api/wishlist")
+  if (!res.ok) return
   const data = await res.json()
-  
-  setWishCount(data.wishlist.length)
-  
+  setWishCount(data?.wishlist?.length || 0)
+} catch {
+  setWishCount(0)
+}
 }
 getWishCount()
   },[])
@@ -48,6 +53,23 @@ getWishCount()
     return ()=> window.removeEventListener("scroll" , fixNavbarToTop)
   },[])
 
+
+  useEffect(() => {
+  const checkUser = async () => {
+    try {
+      const res = await fetch("/api/auth/me", {
+  cache: "no-store"
+})
+      const data = await res.json()
+
+      setIsLogin(!!data.user)
+    } catch {
+      setIsLogin(false)
+    }
+  }
+
+  checkUser()
+}, [])
 
   return (
     <nav className={fixTop ? styles.navbar_fixed : styles.navbar}>
