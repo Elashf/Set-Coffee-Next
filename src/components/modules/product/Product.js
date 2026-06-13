@@ -3,8 +3,9 @@ import Link from "next/link";
 import styles from "./product.module.css";
 import { FaRegStar, FaStar } from "react-icons/fa";
 import { CiSearch, CiHeart } from "react-icons/ci";
+import { showSwal } from "@/utils/helper";
 
-const Card = ({_id ,img,name , price}) => {
+const Card = ({_id ,img,name , price }) => {
 
   const addToWish = async (productId) => {
  
@@ -19,7 +20,42 @@ const Card = ({_id ,img,name , price}) => {
     }),
   });
 };
+ const addToCart = () => {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
+    if (cart.length) {
+      const isInCart = cart.some((item) => item.id === _id);
+
+      if (isInCart) {
+        cart.forEach(item=>{
+          if(item.id===_id){
+            item.count+=1
+          }
+        })
+        localStorage.setItem("cart", JSON.stringify(cart))
+      }else{
+         const cartItem = {
+        id: _id,
+        name,
+        price,
+        count :1,
+      };
+      cart.push(cartItem);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      showSwal("محصول به سبد خرید اضافه شد", "success", "OK");
+      }
+    } else {
+      const cartItem = {
+        id: _id,
+        name,
+        price,
+        count:1,
+      };
+      cart.push(cartItem);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      showSwal("محصول به سبد خرید اضافه شد", "success", "OK");
+    }
+  };
 
   return (
     <div className={styles.card}>
@@ -38,7 +74,7 @@ const Card = ({_id ,img,name , price}) => {
             <p className={styles.tooltip}>افزودن به علاقه مندی ها </p>
           </div>
         </div>
-        <button>افزودن به سبد خرید</button>
+        <button onClick={addToCart}>افزودن به سبد خرید</button>
       </div>
 
       <div className={styles.details}>

@@ -23,12 +23,13 @@ const   Table = () => {
 
 
 
+
   useEffect(()=>{
      let price = 0;
 
 if (cart.length) {
       price = cart.reduce(
-        (prev, current) => prev + current.price * current.count,
+        (prev, current) => prev + Number(current.price || 0) * Number(current.count || 1),
         0,
       );
       
@@ -51,7 +52,7 @@ setTotalPrice(price)
   const decreaseCount =(id)=>{
     const updatedCart = cart.map(item=> item.id ===id ?
     {...item , count : item.count -1} : item
-  ).filter(item=> item.count >1)
+  ).filter(item=> item.count >0)
   setCart(updatedCart)
    localStorage.setItem("cart" , JSON.stringify(updatedCart))
   }

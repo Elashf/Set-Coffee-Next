@@ -17,7 +17,7 @@ function AccountDetails() {
       const data = await res.json();
 
       setName(data.name);
-      setEmail(data.email);
+      setEmail();
       setPhone(data.phone);
     };
     getUser();

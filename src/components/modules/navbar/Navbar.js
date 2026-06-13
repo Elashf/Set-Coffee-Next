@@ -13,7 +13,8 @@ function Navbar() {
   const [cartCount , setCartCount]= useState(0)
   const [isLogin, setIsLogin] = useState(false)
 
-  
+ 
+
   useEffect(()=>{
     const cart =JSON.parse(localStorage.getItem("cart") || "[]") 
     setCartCount(cart.length)
@@ -58,9 +59,11 @@ getWishCount()
   const checkUser = async () => {
     try {
       const res = await fetch("/api/auth/me", {
+        credentials: "include",
   cache: "no-store"
 })
       const data = await res.json()
+
 
       setIsLogin(!!data.user)
     } catch {
@@ -70,6 +73,7 @@ getWishCount()
 
   checkUser()
 }, [])
+
 
   return (
     <nav className={fixTop ? styles.navbar_fixed : styles.navbar}>
@@ -125,7 +129,7 @@ getWishCount()
           </Link>
           <Link href="/wishlist">
             <FaRegHeart />
-            <span>{wishCount}</span>
+           
           </Link>
           
         </div>
