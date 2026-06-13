@@ -2,6 +2,7 @@ import { verifyAccessToken } from "@/utils/auth";
 import { cookies } from "next/headers";
 import userModel from "../../../../../models/User";
 import connectToDB from "@/configs/db";
+import { NextResponse } from "next/server";
 
 export async function GET(request) {
     await connectToDB()
@@ -14,9 +15,9 @@ let user =null
              user = await userModel.findOne({email :tokenPayload.email} , "-password -refreshToken -__v")
 
         }
-         return Response.json(user)
+         return NextResponse.json(user)
     }else{
-         return Response.json({data:null ,message:"Not access" },{status:401})
+         return NextResponse.json({data:null ,message:"Not access" },{status:401})
     }
 
     

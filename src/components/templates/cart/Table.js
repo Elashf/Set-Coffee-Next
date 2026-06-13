@@ -101,7 +101,7 @@ setTotalPrice(price)
                 </td>
                 <td className={styles.product}>
                   <img
-                    src="https://set-coffee.com/wp-content/uploads/2020/12/Red-box-DG--430x430.jpg"
+                    src={item.img}
                     alt=""
                   />
                   <Link href={"/"}>{item.name}</Link>

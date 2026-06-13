@@ -18,7 +18,7 @@ try {
      return Response.json({message:"User not found"},{status:422})
  }
 
- const isCorrectPasswordWithHash = verifyPassword(password , user.password)
+ const isCorrectPasswordWithHash = await verifyPassword(password , user.password)
 
  if(!isCorrectPasswordWithHash){
     return Response.json({message:"Email or password is invalid"},{status:401})
@@ -33,12 +33,20 @@ await userModel.findOneAndUpdate({email} , {
 })
 
 
- const response = NextResponse.json({message:"User login successfully" ,user},{status:200})
+ const response = NextResponse.json({message:"User login successfully" ,user:{_id :user._id , name:user.name ,email:user.email ,role:user.role}},{status:200})
+
  response.cookies.set("token" , accessToken , {
     httpOnly:true,
     path:"/",
     maxAge:60*60*24
  })
+ response.cookies.set("refreshToken" ,refreshToken ,{
+   httpOnly:true ,
+   path:"/",
+   maxAge:60*60*24*15
+ })
+
+
  return response;
 
 } catch (error) {

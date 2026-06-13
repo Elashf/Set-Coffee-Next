@@ -13,7 +13,7 @@ const verifyPassword = async (password , hashedPassword)=>{
 
 const generateAccessToken =(data)=>{
   const token =  sign({...data} ,process.env.AccessTokenPrivateKey , {
-    expiresIn:"60d"
+    expiresIn:"1h"
   })
 return token
 }
@@ -35,6 +35,20 @@ const generateRefreshToken =(data)=>{
     return token
 }
 
+const verifyRefreshToken = (token)=>{
+   try {
+    const payload = verify(
+        token,
+        process.env.RefreshTokenPrivateKey
+    )
+    return payload
+   } catch (error) {
+    return false
+   }
+}
+
+
+
 const validateEmail = (email)=>{
     const pattern = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/g
 return pattern.test(email)
@@ -54,4 +68,4 @@ const validatePassword = (password)=>{
 
 export {hashPasswprd , verifyPassword , generateAccessToken , verifyAccessToken , generateRefreshToken ,validateEmail,
 validatePhone,
-validatePassword }
+validatePassword ,verifyRefreshToken}

@@ -21,7 +21,10 @@ const schema =new mongoose.Schema({
     type: String , 
     default:"USER"
    } ,
-   refreshToken:String
+   refreshToken:{
+      type:String,
+      default:null
+   }
 }) 
 
  const model = mongoose.models.User || mongoose.model("User" ,schema)

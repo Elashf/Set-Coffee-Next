@@ -62,11 +62,9 @@ getWishCount()
             <Link href="/">صفحه اصلی</Link>
           </li>
           <li>
-            <Link href="/category">فروشگاه</Link>
+            <Link href="/">فروشگاه</Link>
           </li>
-          <li>
-            <Link href="/blog">وبلاگ</Link>
-          </li>
+         
           <li>
             <Link href="/contact-us">تماس با ما</Link>
           </li>
