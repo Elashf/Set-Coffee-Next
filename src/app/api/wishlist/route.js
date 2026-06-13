@@ -6,6 +6,9 @@ import { NextResponse } from "next/server";
 export async function POST(request) {
   await connectToDB();
   const user = await authUser()
+  if(!user){
+    return Response.json({wishlist:[]})
+  }
   const body = await request.json();
   const {productId} = body
 await wishlistModel.create({
