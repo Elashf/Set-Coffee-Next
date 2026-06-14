@@ -109,3 +109,66 @@
 .share svg {
   font-size: 1.3rem;
 }
+
+
+@media (max-width: 768px) {
+ .main {
+    width: 100% !important;
+    padding: 0 15px;
+    
+  }
+
+  .description {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .cart {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .cart button {
+    width: 100%;
+  }
+
+  .cart div {
+    .cart div {
+    padding: 4px 12px;
+    gap: 12px;
+    border-radius: 6px;
+    min-width: 130px;
+  }
+  }
+
+  .wishlist {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .share {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .rating {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .price {
+    font-size: 1.2rem;
+  }
+
+  .cart button {
+    font-size: 14px;
+    padding: 0.7rem 1rem;
+  }
+
+  .Available {
+    margin-bottom: 30px;
+  }
+}

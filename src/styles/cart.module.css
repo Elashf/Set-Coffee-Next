@@ -56,3 +56,9 @@
   margin-right: auto;
   margin-left: auto;
 }
+
+@media (max-width: 992px) {
+  .cart {
+    flex-direction: column;
+  }
+}

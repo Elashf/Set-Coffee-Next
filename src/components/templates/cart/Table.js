@@ -89,18 +89,18 @@ setTotalPrice(price)
           <tbody>
             {cart.map((item) => (
               <tr key={item.id}>
-                <td>{(item.count * item.price).toLocaleString()} تومان</td>
-                <td className={styles.counter}>
+                <td data-label="جمع جزء">{(item.count * item.price).toLocaleString()} تومان</td>
+                <td data-label="تعداد" className={styles.counter}>
                   <div>
                     <span onClick={()=> decreaseCount(item.id)}>-</span>
                     <p>{item.count}</p>
                     <span onClick={()=>increaseCount(item.id)}>+</span>
                   </div>
                 </td>
-                <td className={styles.price}>
+                <td data-label="قیمت" className={styles.price}>
                   {item.price.toLocaleString()} تومان
                 </td>
-                <td className={styles.product}>
+                <td data-label="محصول" className={styles.product}>
                   <img
                     src={item.img}
                     alt=""
@@ -108,7 +108,7 @@ setTotalPrice(price)
                   <Link href={"/"}>{item.name}</Link>
                 </td>
 
-                <td>
+                <td data-label="حذف">
                   <IoMdClose className={styles.delete_icon} />
                 </td>
               </tr>

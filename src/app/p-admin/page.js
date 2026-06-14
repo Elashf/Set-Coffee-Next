@@ -13,7 +13,7 @@ import SaleChart from "@/components/templates/p-admin/index/SaleChart";
 import GrowthChart from "@/components/templates/p-admin/index/GrowthChart";
 
 async function AdminHomePage() {
-  connectToDB();
+ await connectToDB();
   const tickets = await TicketModel.find({}).lean();
   const users = await UserModel.find({}).lean();
   const products = await ProductModel.find({}).lean();

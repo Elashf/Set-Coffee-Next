@@ -132,3 +132,59 @@
   transition: color 0.25s ease, background-color 0.25s ease,
     border-color 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
 }
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+  .table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .product {
+    width: 220px;
+  }
+
+  .product img {
+    width: 60px;
+  }
+
+  .product a {
+    font-size: 12px;
+  }
+
+  .tabel_container section {
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+  }
+
+  .tabel_container section div {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .tabel_container section input {
+    width: 100%;
+  }
+
+  .set_off_btn,
+  .update_btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 992px) {
+  .totals {
+    width: 100%;
+  }
+}

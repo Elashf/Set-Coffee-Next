@@ -64,3 +64,35 @@
   gap: 40px;
   grid-template-columns: auto auto auto;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 992px) {
+  .container section {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+
+
+
+@media (max-width: 600px) {
+  .container section {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .title {
+    font-size: 16px;
+  }
+}

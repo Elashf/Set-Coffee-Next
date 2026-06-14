@@ -12,7 +12,7 @@ const Latest = ({products}) => {
           <p>آخرین محصولات</p>
           <span>Latest products</span>
         </div>
-        <Link className={styles.link} href={"/category"}>
+        <Link className={styles.link} href={"/"}>
           مشاهده همه <FaChevronLeft />{" "}
         </Link>
       </section>
