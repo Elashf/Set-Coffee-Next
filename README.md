@@ -16,6 +16,10 @@ https://set-coffee-next.onrender.com
 * Discount codes
 * Support ticket system
 * Interactive map
+  
+***** 📱 Responsive Design:
+The application is primarily optimized for desktop experience.  
+Responsive support for key pages (Home, Product, Cart, and Wishlist) has been implemented, while full mobile optimization is an ongoing improvement.
 
 ## Tech Stack
 
